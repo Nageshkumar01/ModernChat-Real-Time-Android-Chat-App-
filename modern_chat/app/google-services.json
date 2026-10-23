@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "41614390625",
+    "project_id": "modernchat-8f00b",
+    "storage_bucket": "modernchat-8f00b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41614390625:android:34d83c45555b7ed56a4120",
+        "android_client_info": {
+          "package_name": "com.teeniv.whatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsa4hWxZ0MOA-I9rAyrfhmAViLYKxIXiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

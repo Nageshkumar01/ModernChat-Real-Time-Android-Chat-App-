@@ -1,0 +1,6 @@
+package com.teeniv.whatsapp;
+import android.content.Intent;import android.os.Bundle;import android.widget.*;import androidx.appcompat.app.AppCompatActivity;import com.google.firebase.auth.FirebaseAuth;import com.google.firebase.database.FirebaseDatabase;
+public class RegisterActivity extends AppCompatActivity {
+ @Override protected void onCreate(Bundle b){super.onCreate(b);setContentView(R.layout.activity_register);EditText name=findViewById(R.id.name),email=findViewById(R.id.email),password=findViewById(R.id.password);findViewById(R.id.createButton).setOnClickListener(v->{String n=name.getText().toString().trim(),e=email.getText().toString().trim(),p=password.getText().toString();if(n.isEmpty()||e.isEmpty()||p.length()<6){toast("Enter your name, a valid email and a password of at least 6 characters");return;}FirebaseAuth.getInstance().createUserWithEmailAndPassword(e,p).addOnSuccessListener(r->{String uid=FirebaseAuth.getInstance().getUid();User u=new User(uid,n,e,"");FirebaseDatabase.getInstance().getReference("users").child(uid).setValue(u).addOnCompleteListener(t->{startActivity(new Intent(this,HomeActivity.class));finishAffinity();});}).addOnFailureListener(x->toast(x.getLocalizedMessage()));});}
+ void toast(String s){Toast.makeText(this,s,Toast.LENGTH_LONG).show();}
+}
